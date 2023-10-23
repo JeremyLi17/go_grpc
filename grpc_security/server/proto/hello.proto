@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+// the first . means generate folder, the second is the package name
+option go_package = ".;service";
+
+// need to define a service
+service SayHello {
+  rpc SayHello(HelloRequest) returns (HelloResponse) {}
+}
+
+message HelloRequest {
+  string requestName = 1;
+}
+
+message HelloResponse {
+  string responseMsg = 1;
+}
